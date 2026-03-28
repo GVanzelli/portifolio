@@ -8,6 +8,7 @@ body {
     background-color: #0F0F0F;
     color: #E0D9C5;
     padding: 2rem;
+    font-family: "Playfair Display", serif;
 }
 
 /*Cabeçalho*/
@@ -37,6 +38,11 @@ nav p {
     font-size: 0.9rem;
     cursor: pointer;
     margin: 0;
+    transition: all 0.3s ease;
+}
+
+nav p:hover {
+    transform: translateY(-2px);
 }
 
 /*Hero Inicial*/
@@ -69,7 +75,7 @@ nav p {
 
 .textHero1 h2 {
     color: #c4a45d;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     margin: 0.5rem 0;
 }
@@ -81,28 +87,33 @@ nav p {
     gap: 1.5rem;
 }
 
-.buttonsHero1 button {
+.buttonsHero1 .btn-hero {
     padding: 0.8rem 1.5rem;
     border-radius: 12px;
     cursor: pointer;
     font-weight: 500;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
     border: none;
 }
 
-.buttonsHero1 button:first-child {
+.buttonsHero1 .btn-hero:first-child {
     background-color: #c4a45d;
     color: #1a1a1a;
 }
 
-.buttonsHero1 button:last-child {
+.buttonsHero1 .btn-hero:last-child {
     background-color: transparent;
     border: 1px solid #333;
     color: #c4a45d;
 }
 
-.buttonsHero1 button p {
-    margin: 0;
-    font-size: 1rem;
+
+.buttonsHero1 .btn-hero:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
 /* Imagem hero Inicial*/
@@ -266,6 +277,10 @@ nav p {
 
 /*Card list*/
 
+.fa-certificate {
+    color: #c4a45d;
+}
+
 .list {
     flex: 1;
     list-style: none;
@@ -279,11 +294,11 @@ nav p {
     background-color: #161616;
     padding: 30px;
     border-radius: 20px;
-    transition: transform 0.3 ease;
+    transition: transform 0.3s ease;
 }
 
 .row:hover {
-    transform: translateX(10px);
+    transform: translateX(5px);
 }
 
 /*Cabeçalho interno do card*/
@@ -315,7 +330,7 @@ nav p {
     margin: 0;
 }
 
-/*Seção Footer*/
+/*Seção Hero Final*/
 
 .heroFinal {
     display: flex;
@@ -359,7 +374,7 @@ nav p {
     border-radius: 12px;
     font-weight: bold;
     font-size: 1.2rem;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -368,8 +383,8 @@ nav p {
 }
 
 .btn-primary:hover {
-    background-color: #866d36;
-    transform: translateY(-3px);
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -379,9 +394,7 @@ nav p {
 }
 
 .btn-secondary:hover {
-    background-color: #c4a45d;
-    color: #1a1a1a;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 /*imagens do hero 2*/
@@ -424,6 +437,7 @@ nav p {
     color: #c4a45d;
     font-size: 1.2rem;
     font-weight: 800;
+    padding-bottom: 0.5rem;
 }
 
 .footerNav {
@@ -435,11 +449,12 @@ nav p {
     color: #a0a0a0;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 .footerNav a:hover {
     color: #c4a45d;
+    transform: translateY(-2px);
 }
 
 .socialLinks {
@@ -451,7 +466,7 @@ nav p {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3 ease, transform 0.3 ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .socialLinks img {
@@ -514,7 +529,7 @@ nav p {
     }
 
     .textHero1 h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .buttonsHero1 {
@@ -595,6 +610,16 @@ nav p {
         font-size: 2.2rem;
     }
 
+    .btn-primary {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttonsHero2 .btn-secondary {
+        padding: 1.2rem 1rem;
+    }
+
     .buttonsHero2 a {
         font-size: 1rem;
     }
@@ -604,22 +629,24 @@ nav p {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
         gap: 0;
-        margin-top: 30px;
-    }
-
-    .imagesFooter::-webkit-scrollbar {
-        display: none;
+        -webkit-overflow-scrolling: touch; 
+        justify-content: flex-start;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .imagesFooter img {
         min-width: 100%;
         width: 100%;
-        height: 500px;
-        scroll-snap-align: center;
+        object-fit: cover;
+        scroll-snap-align: start;
         border-radius: 0;
-        pointer-events: none;
+        transform: none !important;
+    }
+
+    .imagesFooter img:hover {
+        transform: none;
     }
 
     /* 7. Footer */
